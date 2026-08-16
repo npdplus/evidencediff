@@ -1,4 +1,4 @@
-# EvidenceDiff Development Standards
+# PromptDiff Development Standards
 
 **Status:** Accepted V0.1 Engineering Standard
 

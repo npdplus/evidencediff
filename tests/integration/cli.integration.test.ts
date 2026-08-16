@@ -15,7 +15,7 @@ interface CapturedRun {
 const temporaryDirectories: string[] = [];
 
 async function temporaryDirectory(): Promise<string> {
-  const directory = await mkdtemp(join(tmpdir(), "evidencediff-cli-test-"));
+  const directory = await mkdtemp(join(tmpdir(), "promptdiff-cli-test-"));
   temporaryDirectories.push(directory);
   return directory;
 }
@@ -69,7 +69,7 @@ describe("P07 CLI integration", () => {
 
     expect(result.code).toBe(3);
     expect(result.stderr).toBe("");
-    expect(result.stdout).toContain("EvidenceDiff REVIEW");
+    expect(result.stdout).toContain("PromptDiff REVIEW");
     expect(result.stdout).toContain("Differences: 1");
     expect(result.stdout).toContain("Regressions: 0");
     expect(result.stdout).toContain("No deterministic acceptance checks were provided.");
@@ -139,7 +139,7 @@ describe("P07 CLI integration", () => {
 
     expect(result.code).toBe(3);
     expect(result.stderr).toBe("");
-    expect(result.stdout).toContain("# EvidenceDiff Evidence");
+    expect(result.stdout).toContain("# PromptDiff Evidence");
     expect(result.stdout).toContain("- Verdict: **REVIEW**");
   });
 
@@ -216,7 +216,7 @@ describe("P07 CLI integration", () => {
 
     expect(result.code).toBe(3);
     expect(result.stderr).toBe("");
-    expect(result.stdout).toContain("EvidenceDiff REVIEW");
+    expect(result.stdout).toContain("PromptDiff REVIEW");
   });
 
   it("resolves Test Definition inputs relative to the definition file", async () => {
@@ -332,7 +332,7 @@ describe("P07 CLI integration", () => {
     const test = await run(cwd, ["test", "--help"]);
 
     expect(topLevel).toMatchObject({ code: 0, stderr: "" });
-    expect(topLevel.stdout).toContain("evidencediff compare");
+    expect(topLevel.stdout).toContain("promptdiff compare");
     expect(compare).toMatchObject({ code: 0, stderr: "" });
     expect(compare.stdout).toContain("--content-type");
     expect(test).toMatchObject({ code: 0, stderr: "" });

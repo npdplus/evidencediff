@@ -1,9 +1,9 @@
 {
-  "name": "@npdplus/evidencediff-core",
-  "version": "0.1.0",
+  "name": "@npdplus/promptdiff-core",
+  "version": "0.1.1",
   "private": true,
   "license": "MIT",
-  "description": "EvidenceDiff deterministic comparison, regression, verdict, and Evidence assembly core",
+  "description": "PromptDiff deterministic comparison, regression, verdict, and Evidence assembly core",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -21,6 +21,6 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@npdplus/evidencediff-contracts": "workspace:*"
+    "@npdplus/promptdiff-contracts": "workspace:*"
   }
 }

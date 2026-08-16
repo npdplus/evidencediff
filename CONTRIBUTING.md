@@ -1,6 +1,6 @@
-# Contributing to EvidenceDiff
+# Contributing to PromptDiff
 
-EvidenceDiff is an experimental NPD PLUS Labs open-source project focused on local AI-output comparison, deterministic regression checks, and versioned evidence.
+PromptDiff is an experimental NPD PLUS Labs open-source project focused on local AI-output comparison, deterministic regression checks, and versioned evidence.
 
 ## Before Contributing
 

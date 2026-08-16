@@ -1,8 +1,8 @@
-# EvidenceDiff V0.1 Testing Strategy
+# PromptDiff V0.1 Testing Strategy
 
 **Status:** Accepted Quality Baseline
 
-EvidenceDiff claims to verify AI-output changes; its own behavior must therefore be strongly and deterministically tested.
+PromptDiff claims to verify AI-output changes; its own behavior must therefore be strongly and deterministically tested.
 
 ## Test Layers
 

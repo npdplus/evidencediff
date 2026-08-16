@@ -1,6 +1,6 @@
-# EvidenceDiff Documentation
+# PromptDiff Documentation
 
-EvidenceDiff V0.1 is a local-first CLI for deterministic comparison and regression testing of captured AI outputs.
+PromptDiff V0.1 is a local-first CLI for deterministic comparison and regression testing of captured AI outputs.
 
 ## User and Contributor Documentation
 
@@ -18,6 +18,6 @@ EvidenceDiff V0.1 is a local-first CLI for deterministic comparison and regressi
 
 ## Core Contract
 
-> EvidenceDiff compares Baseline and Candidate outputs locally, runs deterministic checks, classifies differences and regressions, and emits versioned Evidence without requiring an AI provider, API key, cloud account, or database.
+> PromptDiff compares Baseline and Candidate outputs locally, runs deterministic checks, classifies differences and regressions, and emits versioned Evidence without requiring an AI provider, API key, cloud account, or database.
 
 Machine verdict and human approval remain separate. A content Difference alone is not a Regression.

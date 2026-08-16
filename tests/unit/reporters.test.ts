@@ -10,7 +10,7 @@ import {
 function evidenceWithDetails(details: Record<string, number>): Evidence {
   return {
     formatVersion: 1,
-    toolVersion: "0.1.0-test",
+    toolVersion: "0.1.1-test",
     id: "11111111-2222-4333-8444-555555555555",
     generatedAt: "2026-08-16T08:00:00.000Z",
     test: { id: "reporters", name: "Reporter snapshot" },
@@ -82,13 +82,13 @@ describe("P06 reporters", () => {
     expect(rendered).not.toContain("DO-NOT-PRINT-DETAILS");
     expect(rendered).toBe(renderEvidenceMarkdown(evidenceWithDetails({ z: 1, a: 2 })));
     expect(rendered).toMatchInlineSnapshot(`
-      "# EvidenceDiff Evidence
+      "# PromptDiff Evidence
 
       - Verdict: **FAIL**
       - Review required: **no**
       - Evidence ID: 11111111-2222-4333-8444-555555555555
       - Generated at: 2026-08-16T08:00:00.000Z
-      - Tool version: 0.1.0-test
+      - Tool version: 0.1.1-test
       - Test: reporters — Reporter snapshot
 
       ## Inputs
@@ -130,10 +130,10 @@ describe("P06 reporters", () => {
     expect(rendered).not.toContain("DO-NOT-PRINT-DETAILS");
     expect(rendered).toBe(renderEvidenceConsole(evidenceWithDetails({ z: 1, a: 2 })));
     expect(rendered).toMatchInlineSnapshot(`
-      "EvidenceDiff FAIL
+      "PromptDiff FAIL
       Evidence: 11111111-2222-4333-8444-555555555555
       Generated: 2026-08-16T08:00:00.000Z
-      Tool: 0.1.0-test
+      Tool: 0.1.1-test
       Review required: no
       Test: reporters - Reporter snapshot
       Baseline: path=baseline.json, contentType=json, tokens=80, latencyMs=250
@@ -156,6 +156,6 @@ describe("P06 reporters", () => {
 
     expect(renderEvidenceJson(evidence)).toContain('"verdict": "REVIEW"');
     expect(renderEvidenceMarkdown(evidence)).toContain("Verdict: **REVIEW**");
-    expect(renderEvidenceConsole(evidence)).toContain("EvidenceDiff REVIEW");
+    expect(renderEvidenceConsole(evidence)).toContain("PromptDiff REVIEW");
   });
 });

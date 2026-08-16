@@ -42,7 +42,7 @@ const promptOutput = execute([
 ]);
 assertClean(promptOutput, 1, "prompt-output regression");
 assert(
-  promptOutput.stdout.includes("EvidenceDiff FAIL"),
+  promptOutput.stdout.includes("PromptDiff FAIL"),
   "prompt-output example did not render FAIL"
 );
 assert(
@@ -91,4 +91,4 @@ assert(reviewEvidence.verdict === "REVIEW", "direct comparison did not remain RE
 assert(reviewEvidence.regressions.length === 0, "direct comparison invented a regression");
 assert(reviewEvidence.differences.length === 1, "direct comparison did not report the Difference");
 
-process.stdout.write("EvidenceDiff P08 example smoke tests passed.\n");
+process.stdout.write("PromptDiff P08 example smoke tests passed.\n");

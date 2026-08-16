@@ -1,10 +1,10 @@
-# EvidenceDiff Security and Privacy Architecture
+# PromptDiff Security and Privacy Architecture
 
 **Status:** Accepted V0.1 Security Baseline
 
 ## Privacy Position
 
-EvidenceDiff V0.1 is local-first. Captured prompts/outputs can contain confidential, personal, proprietary, or regulated information. The tool must not upload them by default or require telemetry/network access to perform comparison.
+PromptDiff V0.1 is local-first. Captured prompts/outputs can contain confidential, personal, proprietary, or regulated information. The tool must not upload them by default or require telemetry/network access to perform comparison.
 
 ## API Keys
 
