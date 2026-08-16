@@ -9,3 +9,5 @@ Strong technical disagreement is acceptable. Keep discussion evidence-based and 
 Do not post credentials, private prompts/outputs, customer data, personal data, or undisclosed vulnerabilities in public discussions. Follow [`SECURITY.md`](SECURITY.md) for security reports.
 
 Project maintainers may remove inappropriate content, close interactions, or restrict participation when behavior materially harms contributors, users, or the project.
+
+For conduct concerns that should not be handled publicly, email `npdplus.co.th@gmail.com` with the subject `[EvidenceDiff Conduct]` and include only the information needed for maintainers to review the report.
