@@ -1,0 +1,116 @@
+name: Hotfix v0.1.1 identity correction
+
+on:
+  push:
+    branches:
+      - hotfix/v0.1.1-promptdiff-identity
+
+permissions:
+  contents: write
+
+jobs:
+  transform:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.15.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Apply PromptDiff identity correction
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const path = require('node:path');
+
+          const root = process.cwd();
+          const skip = new Set([
+            'CHANGELOG.md',
+            'docs/release/V0.1_RELEASE_NOTES.md',
+            '.github/workflows/hotfix-v011-identity.yml'
+          ]);
+          const textExt = new Set([
+            '.md', '.json', '.ts', '.tsx', '.js', '.mjs', '.cjs', '.yml', '.yaml', '.txt', '.toml'
+          ]);
+
+          function walk(dir) {
+            for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+              if (entry.name === '.git' || entry.name === 'node_modules' || entry.name === 'dist') continue;
+              const abs = path.join(dir, entry.name);
+              const rel = path.relative(root, abs).replaceAll('\\\\', '/');
+              if (entry.isDirectory()) {
+                walk(abs);
+                continue;
+              }
+              if (skip.has(rel)) continue;
+              if (!(textExt.has(path.extname(entry.name)) || entry.name === 'pnpm-lock.yaml')) continue;
+
+              const before = fs.readFileSync(abs, 'utf8');
+              let after = before
+                .replaceAll('@npdplus/evidencediff-', '@npdplus/promptdiff-')
+                .replaceAll('EvidenceDiff', 'PromptDiff')
+                .replaceAll('evidencediff', 'promptdiff')
+                .replaceAll('0.1.0', '0.1.1');
+              if (after !== before) fs.writeFileSync(abs, after);
+            }
+          }
+
+          walk(root);
+
+          const changelogPath = path.join(root, 'CHANGELOG.md');
+          let changelog = fs.readFileSync(changelogPath, 'utf8');
+          changelog = changelog.replace(
+            'All notable EvidenceDiff changes are recorded here.',
+            'All notable PromptDiff changes are recorded here.'
+          );
+          const marker = '## [0.1.0] — 2026-08-16';
+          if (!changelog.includes('## [0.1.1] — 2026-08-16')) {
+            const section = `## [0.1.1] — 2026-08-16\n\n### Changed\n\n- restored the intended public product identity from EvidenceDiff to PromptDiff;\n- renamed the CLI command from \`evidencediff\` to \`promptdiff\`;\n- renamed workspace packages from \`@npdplus/evidencediff-*\` to \`@npdplus/promptdiff-*\`;\n- updated public documentation, examples, tests, package metadata, and CLI help text to PromptDiff;\n- bumped product and workspace package versions to \`0.1.1\`.\n\n### Compatibility\n\n- comparison semantics, deterministic checks, Evidence format, verdict rules, exit codes, privacy posture, and runtime behavior are unchanged from v0.1.0;\n- the v0.1.0 tag remains the historical initial release baseline.\n\n`;
+            changelog = changelog.replace(marker, section + marker);
+          }
+          fs.writeFileSync(changelogPath, changelog);
+
+          const oldNotesPath = path.join(root, 'docs/release/V0.1_RELEASE_NOTES.md');
+          if (fs.existsSync(oldNotesPath)) {
+            let oldNotes = fs.readFileSync(oldNotesPath, 'utf8');
+            const note = '> Historical note: v0.1.0 was initially published under the temporary EvidenceDiff identity. It is superseded by PromptDiff v0.1.1; the v0.1.0 tag is retained as historical evidence.\n\n';
+            if (!oldNotes.startsWith('> Historical note:')) oldNotes = note + oldNotes;
+            fs.writeFileSync(oldNotesPath, oldNotes);
+          }
+
+          const releaseNotes = `# PromptDiff v0.1.1 Release Notes\n\nPromptDiff v0.1.1 is a naming and package-identity correction release for the local-first deterministic AI output comparison CLI.\n\n## What Changed\n\n- product identity: EvidenceDiff → PromptDiff;\n- CLI command: \`evidencediff\` → \`promptdiff\`;\n- workspace package namespace: \`@npdplus/evidencediff-*\` → \`@npdplus/promptdiff-*\`;\n- package and CLI version: \`0.1.0\` → \`0.1.1\`;\n- public README, documentation, examples, tests, and help text now use the intended PromptDiff identity.\n\n## Behavior\n\nThere is no intended change to comparison semantics, deterministic checks, Regression/Improvement classification, Evidence format version \`1\`, verdict aggregation, exit codes, privacy posture, or local-first runtime behavior.\n\n## Core Workflows\n\n- \`promptdiff compare\` compares local Baseline and Candidate files and returns \`REVIEW\` when no deterministic acceptance checks are supplied.\n- \`promptdiff test\` executes Test Definition format \`1\`, evaluates deterministic checks, classifies regressions/improvements, aggregates a verdict, and emits Evidence.\n\n## Exit Codes\n\n- \`0\` — \`PASS\`;\n- \`1\` — \`FAIL\`;\n- \`2\` — configuration/execution/runtime error;\n- \`3\` — \`REVIEW\`.\n\n## Historical Note\n\nThe v0.1.0 tag is retained as the historical initial release baseline. v0.1.1 restores the intended public product identity without rewriting Git history.\n`;
+          fs.mkdirSync(path.join(root, 'docs/release'), { recursive: true });
+          fs.writeFileSync(path.join(root, 'docs/release/V0.1.1_RELEASE_NOTES.md'), releaseNotes);
+          NODE
+
+      - name: Refresh lockfile
+        run: pnpm install --lockfile-only
+
+      - name: Format changed content
+        run: pnpm exec prettier --write .
+
+      - name: Remove one-time workflow
+        run: rm .github/workflows/hotfix-v011-identity.yml
+
+      - name: Commit identity correction
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git status --short
+          git commit -m "fix(release): restore PromptDiff identity for v0.1.1"
+          git push origin HEAD:hotfix/v0.1.1-promptdiff-identity
