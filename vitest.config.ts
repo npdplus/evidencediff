@@ -9,10 +9,10 @@ function workspaceSource(path: string): string {
 export default defineConfig({
   resolve: {
     alias: {
-      "@npdplus/evidencediff-checks": workspaceSource("./packages/checks/src/index.ts"),
-      "@npdplus/evidencediff-contracts": workspaceSource("./packages/contracts/src/index.ts"),
-      "@npdplus/evidencediff-core": workspaceSource("./packages/core/src/index.ts"),
-      "@npdplus/evidencediff-reporters": workspaceSource("./packages/reporters/src/index.ts")
+      "@npdplus/promptdiff-checks": workspaceSource("./packages/checks/src/index.ts"),
+      "@npdplus/promptdiff-contracts": workspaceSource("./packages/contracts/src/index.ts"),
+      "@npdplus/promptdiff-core": workspaceSource("./packages/core/src/index.ts"),
+      "@npdplus/promptdiff-reporters": workspaceSource("./packages/reporters/src/index.ts")
     }
   },
   test: {

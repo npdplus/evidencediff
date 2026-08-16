@@ -6,7 +6,7 @@ import type {
   Improvement,
   MetricComparison,
   Regression
-} from "@npdplus/evidencediff-contracts";
+} from "@npdplus/promptdiff-contracts";
 
 type CanonicalValue =
   | null
@@ -146,7 +146,7 @@ function metricSummary(metric: MetricComparison): string {
 
 export function renderEvidenceMarkdown(evidence: Evidence): string {
   const lines = [
-    "# EvidenceDiff Evidence",
+    "# PromptDiff Evidence",
     "",
     `- Verdict: **${evidence.verdict}**`,
     `- Review required: **${evidence.reviewRequired ? "yes" : "no"}**`,
@@ -217,7 +217,7 @@ export function renderEvidenceMarkdown(evidence: Evidence): string {
 
 export function renderEvidenceConsole(evidence: Evidence): string {
   const lines = [
-    `EvidenceDiff ${evidence.verdict}`,
+    `PromptDiff ${evidence.verdict}`,
     `Evidence: ${oneLine(evidence.id)}`,
     `Generated: ${oneLine(evidence.generatedAt)}`,
     `Tool: ${oneLine(evidence.toolVersion)}`,

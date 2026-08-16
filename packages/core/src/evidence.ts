@@ -8,7 +8,7 @@ import type {
   Evidence,
   EvidenceInputIdentity,
   EvidenceTestContext
-} from "@npdplus/evidencediff-contracts";
+} from "@npdplus/promptdiff-contracts";
 
 import type { RegressionVerdictSummary } from "./regression-verdict.js";
 

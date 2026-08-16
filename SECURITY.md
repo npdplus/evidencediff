@@ -1,6 +1,6 @@
 # Security Policy
 
-EvidenceDiff processes AI prompts/outputs and generated Evidence that may contain sensitive information.
+PromptDiff processes AI prompts/outputs and generated Evidence that may contain sensitive information.
 
 ## Supported Versions
 
@@ -12,13 +12,13 @@ EvidenceDiff processes AI prompts/outputs and generated Evidence that may contai
 
 Do **not** open a public GitHub issue for an exploitable vulnerability.
 
-When this repository is public, use GitHub's private vulnerability reporting flow from the repository **Security** area to submit the report privately to the maintainers. If the private reporting form is unavailable, email `npdplus.co.th@gmail.com` with the subject `[EvidenceDiff Security]` and provide only minimized synthetic reproduction details until a secure exchange path is established.
+When this repository is public, use GitHub's private vulnerability reporting flow from the repository **Security** area to submit the report privately to the maintainers. If the private reporting form is unavailable, email `npdplus.co.th@gmail.com` with the subject `[PromptDiff Security]` and provide only minimized synthetic reproduction details until a secure exchange path is established.
 
 Never attach real credentials, production customer data, private prompts, or private model outputs to a public issue or discussion.
 
 ## V0.1 Security Scope
 
-EvidenceDiff V0.1 is designed to avoid major secret-custody risks:
+PromptDiff V0.1 is designed to avoid major secret-custody risks:
 
 - no provider API keys are required;
 - no provider execution is required;

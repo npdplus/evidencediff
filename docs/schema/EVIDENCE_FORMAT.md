@@ -1,18 +1,18 @@
-# EvidenceDiff V0.1 Evidence Format
+# PromptDiff V0.1 Evidence Format
 
 **Status:** Frozen Behavioral/Data Contract  
 **Format version:** `1`
 
 ## Purpose
 
-Evidence is the canonical structured result of a completed EvidenceDiff comparison/test evaluation. Console and Markdown reports are renderings of Evidence; they are not independent sources of product semantics.
+Evidence is the canonical structured result of a completed PromptDiff comparison/test evaluation. Console and Markdown reports are renderings of Evidence; they are not independent sources of product semantics.
 
 ## Required Top-Level Model
 
 Evidence format `1` contains:
 
 - `formatVersion`: integer `1`;
-- `toolVersion`: EvidenceDiff package/tool version used to create the artifact;
+- `toolVersion`: PromptDiff package/tool version used to create the artifact;
 - `id`: opaque Evidence/comparison identifier;
 - `generatedAt`: generation timestamp;
 - optional Test Definition context (`id`, `name`, optional description);
@@ -40,7 +40,7 @@ When no Improvements exist, the optional `improvements` field may be omitted. Ot
 
 ## Metrics
 
-EvidenceDiff records token/latency values only when supplied by input metadata. It does not call a provider or estimate missing values. When both sides exist, delta means `Candidate - Baseline`; one-sided metadata may be represented without an invented delta.
+PromptDiff records token/latency values only when supplied by input metadata. It does not call a provider or estimate missing values. When both sides exist, delta means `Candidate - Baseline`; one-sided metadata may be represented without an invented delta.
 
 ## Privacy / Content Inclusion
 

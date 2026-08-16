@@ -14,7 +14,7 @@ async function packageVersion(relativePath: string): Promise<string> {
 }
 
 describe("P10 release metadata", () => {
-  it("keeps every V0.1 package version aligned at 0.1.0", async () => {
+  it("keeps every V0.1 package version aligned at 0.1.1", async () => {
     const versions = await Promise.all([
       packageVersion("../../package.json"),
       packageVersion("../../apps/cli/package.json"),
@@ -24,7 +24,7 @@ describe("P10 release metadata", () => {
       packageVersion("../../packages/reporters/package.json")
     ]);
 
-    expect(new Set(versions)).toEqual(new Set(["0.1.0"]));
+    expect(new Set(versions)).toEqual(new Set(["0.1.1"]));
   });
 
   it("reports the V0.1 release version through CLI help", async () => {
@@ -42,6 +42,6 @@ describe("P10 release metadata", () => {
 
     expect(code).toBe(0);
     expect(stderr).toBe("");
-    expect(stdout).toContain("EvidenceDiff 0.1.0");
+    expect(stdout).toContain("PromptDiff 0.1.1");
   });
 });

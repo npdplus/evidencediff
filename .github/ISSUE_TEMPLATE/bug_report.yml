@@ -1,5 +1,5 @@
 name: Bug report
-description: Report a reproducible EvidenceDiff defect
+description: Report a reproducible PromptDiff defect
 title: "[Bug] "
 labels:
   - bug

@@ -56,7 +56,7 @@ describe("P06 Evidence/reporters integration with frozen P03-P05 outputs", () =>
       candidateMetrics: definition.candidate
     });
     const evidence = assembleEvidence({
-      toolVersion: "0.1.0-test",
+      toolVersion: "0.1.1-test",
       test: { id: definition.id, name: definition.name },
       baseline,
       candidate,

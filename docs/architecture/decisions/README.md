@@ -1,4 +1,4 @@
-# EvidenceDiff Architecture Decision Records
+# PromptDiff Architecture Decision Records
 
 **Status:** Accepted V0.1 Decision Log
 

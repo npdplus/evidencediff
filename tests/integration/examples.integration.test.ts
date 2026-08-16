@@ -81,7 +81,7 @@ describe("P08 examples and integration", () => {
 
     expect(result.code).toBe(1);
     expect(result.stderr).toBe("");
-    expect(result.stdout).toContain("EvidenceDiff FAIL");
+    expect(result.stdout).toContain("PromptDiff FAIL");
     expect(result.stdout).toContain("Regressions: 1");
     expect(result.stdout).toContain("required-escalation");
     expect(result.stdout).not.toContain("Your billing request is queued");
@@ -97,7 +97,7 @@ describe("P08 examples and integration", () => {
 
     expect(result.code).toBe(0);
     expect(result.stderr).toBe("");
-    expect(result.stdout).toContain("# EvidenceDiff Evidence");
+    expect(result.stdout).toContain("# PromptDiff Evidence");
     expect(result.stdout).toContain("- Verdict: **PASS**");
     expect(result.stdout).toContain("## Differences (1)");
   });

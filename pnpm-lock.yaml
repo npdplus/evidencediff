@@ -32,16 +32,16 @@ importers:
 
   apps/cli:
     dependencies:
-      '@npdplus/evidencediff-checks':
+      '@npdplus/promptdiff-checks':
         specifier: workspace:*
         version: link:../../packages/checks
-      '@npdplus/evidencediff-contracts':
+      '@npdplus/promptdiff-contracts':
         specifier: workspace:*
         version: link:../../packages/contracts
-      '@npdplus/evidencediff-core':
+      '@npdplus/promptdiff-core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@npdplus/evidencediff-reporters':
+      '@npdplus/promptdiff-reporters':
         specifier: workspace:*
         version: link:../../packages/reporters
 
@@ -51,13 +51,13 @@ importers:
 
   packages/core:
     dependencies:
-      '@npdplus/evidencediff-contracts':
+      '@npdplus/promptdiff-contracts':
         specifier: workspace:*
         version: link:../contracts
 
   packages/reporters:
     dependencies:
-      '@npdplus/evidencediff-contracts':
+      '@npdplus/promptdiff-contracts':
         specifier: workspace:*
         version: link:../contracts
 

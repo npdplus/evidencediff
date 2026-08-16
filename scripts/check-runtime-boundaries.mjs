@@ -76,7 +76,7 @@ for (const packageRoot of workspacePackageRoots) {
   };
 
   for (const [name, specifier] of Object.entries(runtimeDependencies)) {
-    if (!name.startsWith("@npdplus/evidencediff-") || !String(specifier).startsWith("workspace:")) {
+    if (!name.startsWith("@npdplus/promptdiff-") || !String(specifier).startsWith("workspace:")) {
       violations.push(`${relative(root, manifestPath)}: external runtime dependency ${name}`);
     }
   }

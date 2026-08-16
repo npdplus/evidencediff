@@ -2,7 +2,7 @@ import { readFile, realpath, stat, writeFile } from "node:fs/promises";
 import { basename, dirname, resolve } from "node:path";
 import process from "node:process";
 
-import { evaluateChecks, CheckEvaluationError } from "@npdplus/evidencediff-checks";
+import { evaluateChecks, CheckEvaluationError } from "@npdplus/promptdiff-checks";
 import {
   ContractValidationError,
   isJsonValue,
@@ -14,18 +14,18 @@ import {
   type JsonValue,
   type TestInputDescriptor,
   type Verdict
-} from "@npdplus/evidencediff-contracts";
+} from "@npdplus/promptdiff-contracts";
 import {
   aggregateRegressionVerdict,
   assembleEvidence,
   compareJson,
   compareText
-} from "@npdplus/evidencediff-core";
+} from "@npdplus/promptdiff-core";
 import {
   renderEvidenceConsole,
   renderEvidenceJson,
   renderEvidenceMarkdown
-} from "@npdplus/evidencediff-reporters";
+} from "@npdplus/promptdiff-reporters";
 
 export type CliExitCode = 0 | 1 | 2 | 3;
 export type CliOutputFormat = "console" | "json" | "markdown";
@@ -65,26 +65,26 @@ class CliError extends Error {
   }
 }
 
-const TOOL_VERSION = "0.1.0";
+const TOOL_VERSION = "0.1.1";
 const OUTPUT_FORMATS = new Set<CliOutputFormat>(["console", "json", "markdown"]);
 const CONTENT_TYPES = new Set<ContentType>(["text", "json", "auto"]);
 
-const TOP_LEVEL_HELP = `EvidenceDiff ${TOOL_VERSION}
+const TOP_LEVEL_HELP = `PromptDiff ${TOOL_VERSION}
 
 Usage:
-  evidencediff compare --baseline <file> --candidate <file> [options]
-  evidencediff test --definition <file> [options]
+  promptdiff compare --baseline <file> --candidate <file> [options]
+  promptdiff test --definition <file> [options]
 
 Commands:
   compare  Compare local Baseline and Candidate files. Successful runs return REVIEW.
   test     Execute a local Test Definition format 1.
 
-Run "evidencediff <command> --help" for command options.
+Run "promptdiff <command> --help" for command options.
 `;
 
 const COMPARE_HELP = `Usage:
-  evidencediff compare --baseline <file> --candidate <file> [options]
-  evidencediff compare <baseline> <candidate> [options]
+  promptdiff compare --baseline <file> --candidate <file> [options]
+  promptdiff compare <baseline> <candidate> [options]
 
 Options:
   --baseline <file>             Baseline input path (relative to current directory).
@@ -97,8 +97,8 @@ Options:
 `;
 
 const TEST_HELP = `Usage:
-  evidencediff test --definition <file> [options]
-  evidencediff test <definition> [options]
+  promptdiff test --definition <file> [options]
+  promptdiff test <definition> [options]
 
 Options:
   --definition <file>           Test Definition format 1 path.
@@ -598,7 +598,7 @@ export async function runCli(
 
     throw new CliError(`Unknown command: ${command}. Use --help for usage.`);
   } catch (error) {
-    io.stderr(`EvidenceDiff error: ${safeErrorMessage(error)}\n`);
+    io.stderr(`PromptDiff error: ${safeErrorMessage(error)}\n`);
     return 2;
   }
 }

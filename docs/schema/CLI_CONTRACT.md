@@ -1,13 +1,13 @@
-# EvidenceDiff V0.1 CLI Contract
+# PromptDiff V0.1 CLI Contract
 
 **Status:** Frozen Primary Interface Contract
 
 ## Commands
 
-### `evidencediff compare`
+### `promptdiff compare`
 Directly compares local Baseline and Candidate outputs. Because no deterministic acceptance checks are supplied by this workflow, a successful comparison returns verdict `REVIEW`.
 
-### `evidencediff test`
+### `promptdiff test`
 Executes a local Test Definition format `1`, including deterministic checks and Evidence generation.
 
 ## Required Capabilities

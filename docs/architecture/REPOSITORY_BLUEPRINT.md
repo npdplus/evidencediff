@@ -1,9 +1,9 @@
-# EvidenceDiff Repository Blueprint
+# PromptDiff Repository Blueprint
 
 ## Public Repository Layout
 
 ```text
-evidencediff/
+promptdiff/
 ├── .github/
 ├── apps/
 │   └── cli/
@@ -42,4 +42,4 @@ Circular dependencies are not acceptable.
 - `tests/` contains cross-package/integration/e2e coverage;
 - `examples/` contains runnable synthetic public examples;
 - `scripts/` contains repository maintenance/build/security helper scripts, not product domain behavior;
-- `.github/workflows/` contains repository CI; EvidenceDiff-as-a-PR-analysis product integration is not a V0.1 feature.
+- `.github/workflows/` contains repository CI; PromptDiff-as-a-PR-analysis product integration is not a V0.1 feature.
