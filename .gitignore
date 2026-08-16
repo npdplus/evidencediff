@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+dist/
+**/dist/
+*.tsbuildinfo
+
+# Test output
+coverage/
+.vitest/
+
+# Tool/editor caches
+.cache/
+.eslintcache
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local EvidenceDiff output/evidence
+evidence/
+output/
+outputs/
+reports/
+.evidencediff/
+*.evidence.json
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*

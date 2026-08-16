@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "id": "captured-model-a-vs-model-b",
+  "name": "Captured Model A versus Model B",
+  "description": "Provider-neutral captured outputs differ while both satisfy the acceptance marker.",
+  "baseline": {
+    "path": "model-a-output.txt",
+    "contentType": "text",
+    "label": "Captured Model A",
+    "model": "Synthetic Model A"
+  },
+  "candidate": {
+    "path": "model-b-output.txt",
+    "contentType": "text",
+    "label": "Captured Model B",
+    "model": "Synthetic Model B"
+  },
+  "checks": [
+    {
+      "id": "dispatch-marker",
+      "type": "contains",
+      "value": "Decision: dispatch."
+    }
+  ]
+}

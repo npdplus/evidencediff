@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "token-latency-budget-regression",
+  "name": "Token and latency budget regression",
+  "description": "Supplied Candidate metadata exceeds both frozen deterministic budgets.",
+  "baseline": {
+    "path": "baseline-output.txt",
+    "contentType": "text",
+    "label": "Budget baseline",
+    "tokens": 80,
+    "latencyMs": 240
+  },
+  "candidate": {
+    "path": "candidate-output.txt",
+    "contentType": "text",
+    "label": "Budget candidate",
+    "tokens": 140,
+    "latencyMs": 720
+  },
+  "checks": [
+    {
+      "id": "token-budget",
+      "type": "token-budget",
+      "maxTokens": 100
+    },
+    {
+      "id": "latency-budget",
+      "type": "latency-budget",
+      "maxLatencyMs": 500
+    }
+  ]
+}

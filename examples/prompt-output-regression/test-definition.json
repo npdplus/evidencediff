@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "id": "prompt-output-regression",
+  "name": "Prompt-output regression",
+  "description": "Captured Candidate output omits a required escalation notice.",
+  "baseline": {
+    "path": "baseline-output.txt",
+    "contentType": "text",
+    "label": "Captured baseline",
+    "promptVersion": "support-v1"
+  },
+  "candidate": {
+    "path": "candidate-output.txt",
+    "contentType": "text",
+    "label": "Captured candidate",
+    "promptVersion": "support-v2"
+  },
+  "checks": [
+    {
+      "id": "required-escalation",
+      "type": "contains",
+      "value": "Escalation: billing-team."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "requestId": "demo-1001",
+  "decision": "approved",
+  "risk": {
+    "level": "low",
+    "score": 18
+  },
+  "reasons": ["identity-verified", "policy-clear"]
+}

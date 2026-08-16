@@ -1,0 +1,26 @@
+{
+  "name": "@npdplus/evidencediff-cli",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "description": "EvidenceDiff local-first command-line interface",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "evidencediff": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@npdplus/evidencediff-checks": "workspace:*",
+    "@npdplus/evidencediff-contracts": "workspace:*",
+    "@npdplus/evidencediff-core": "workspace:*",
+    "@npdplus/evidencediff-reporters": "workspace:*"
+  }
+}

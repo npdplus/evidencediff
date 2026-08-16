@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "structured-json-regression",
+  "name": "Structured JSON regression",
+  "description": "Candidate changes a required approved decision to manual-review.",
+  "baseline": {
+    "path": "baseline.json",
+    "contentType": "json",
+    "label": "Approved baseline"
+  },
+  "candidate": {
+    "path": "candidate.json",
+    "contentType": "json",
+    "label": "Changed candidate"
+  },
+  "checks": [
+    {
+      "id": "decision-approved",
+      "type": "exact",
+      "target": "/decision",
+      "expected": "approved"
+    }
+  ]
+}

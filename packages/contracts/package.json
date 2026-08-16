@@ -1,0 +1,23 @@
+{
+  "name": "@npdplus/evidencediff-contracts",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "description": "EvidenceDiff V0.1 contracts and validation",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  }
+}

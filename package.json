@@ -1,0 +1,40 @@
+{
+  "name": "evidencediff",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local-first AI output comparison, deterministic regression testing, and evidence CLI",
+  "license": "MIT",
+  "packageManager": "pnpm@10.15.0",
+  "engines": {
+    "node": ">=24 <25",
+    "pnpm": ">=10 <11"
+  },
+  "scripts": {
+    "build": "pnpm -r --if-present build",
+    "typecheck": "tsc -p tsconfig.json --noEmit && pnpm -r --if-present typecheck",
+    "lint": "eslint . --max-warnings=0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:cli-smoke": "node tests/e2e/cli-smoke.mjs",
+    "test:examples": "node tests/e2e/examples-smoke.mjs",
+    "test:package": "node tests/e2e/package-smoke.mjs",
+    "check:boundaries": "node scripts/check-package-boundaries.mjs",
+    "check:runtime-boundaries": "node scripts/check-runtime-boundaries.mjs",
+    "check:dependency-policy": "node scripts/check-dependency-policy.mjs",
+    "check:secret-history": "node scripts/scan-secret-history.mjs",
+    "check:security": "pnpm check:runtime-boundaries && pnpm check:dependency-policy && pnpm check:secret-history",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm check:boundaries && pnpm check:runtime-boundaries && pnpm check:dependency-policy && pnpm build && pnpm test:package"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.33.0",
+    "@types/node": "24.3.0",
+    "eslint": "9.33.0",
+    "prettier": "3.6.2",
+    "typescript": "5.9.2",
+    "typescript-eslint": "8.39.1",
+    "vitest": "3.2.7"
+  },
+  "type": "module"
+}

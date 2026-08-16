@@ -1,0 +1,2 @@
+Decision: dispatch.
+Package is ready for the next pickup window.
