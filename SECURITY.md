@@ -12,9 +12,9 @@ EvidenceDiff processes AI prompts/outputs and generated Evidence that may contai
 
 Do **not** open a public GitHub issue for an exploitable vulnerability.
 
-Use GitHub's private vulnerability reporting / Security Advisory flow for this repository when enabled. If the repository does not expose that private form, contact the repository owner through a private GitHub channel and provide only minimized synthetic reproduction data until a secure exchange path is established.
+When this repository is public, use GitHub's private vulnerability reporting flow from the repository **Security** area to submit the report privately to the maintainers. If the private reporting form is unavailable, email `npdplus.co.th@gmail.com` with the subject `[EvidenceDiff Security]` and provide only minimized synthetic reproduction details until a secure exchange path is established.
 
-Never attach real credentials, production customer data, or private model outputs to a public issue or discussion.
+Never attach real credentials, production customer data, private prompts, or private model outputs to a public issue or discussion.
 
 ## V0.1 Security Scope
 
