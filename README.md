@@ -1,12 +1,12 @@
-# EvidenceDiff
+# PromptDiff
 
 > **NPD PLUS Labs / Experimental Open-source**
 >
 > Compare captured AI outputs locally, run deterministic regression checks, and produce reviewable Evidence without sending prompts to a model provider.
 
-**Version:** `0.1.0`
+**Version:** `0.1.1`
 
-EvidenceDiff answers one engineering question:
+PromptDiff answers one engineering question:
 
 > **What changed, what failed, and what evidence do we have that a candidate AI behavior is safe to accept?**
 
@@ -31,7 +31,7 @@ A Difference is not automatically a Regression. Direct comparison without determ
 - safe explicit output handling;
 - no provider execution, API-key custody, cloud login, database, telemetry, or remote synchronization requirement.
 
-EvidenceDiff is intentionally not a chatbot UI, prompt playground, provider gateway, or all-in-one AI platform.
+PromptDiff is intentionally not a chatbot UI, prompt playground, provider gateway, or all-in-one AI platform.
 
 ## Requirements
 
@@ -123,7 +123,7 @@ macOS is not claimed as a verified V0.1 platform.
 
 ## V0.1 Limitations
 
-- captured/local outputs only; EvidenceDiff does not execute models;
+- captured/local outputs only; PromptDiff does not execute models;
 - deterministic checks only; no LLM-as-a-judge or semantic evaluator;
 - CLI-first; no Viewer/UI in V0.1;
 - local files only; no shared database/history/collaboration service;

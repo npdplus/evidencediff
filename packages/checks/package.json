@@ -1,9 +1,9 @@
 {
-  "name": "@npdplus/evidencediff-checks",
-  "version": "0.1.0",
+  "name": "@npdplus/promptdiff-checks",
+  "version": "0.1.1",
   "private": true,
   "license": "MIT",
-  "description": "EvidenceDiff V0.1 deterministic acceptance checks",
+  "description": "PromptDiff V0.1 deterministic acceptance checks",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

@@ -6,7 +6,7 @@ import type {
   MetricComparison,
   Regression,
   Verdict
-} from "@npdplus/evidencediff-contracts";
+} from "@npdplus/promptdiff-contracts";
 
 type MetricMetadata = Pick<InputMetadata, "tokens" | "latencyMs">;
 

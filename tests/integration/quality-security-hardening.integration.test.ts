@@ -17,7 +17,7 @@ const uuidPattern = /[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9
 const generatedAtPattern = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z/g;
 
 async function temporaryDirectory(): Promise<string> {
-  const directory = await mkdtemp(join(tmpdir(), "evidencediff-hardening-test-"));
+  const directory = await mkdtemp(join(tmpdir(), "promptdiff-hardening-test-"));
   temporaryDirectories.push(directory);
   return directory;
 }

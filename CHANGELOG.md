@@ -1,6 +1,21 @@
 # Changelog
 
-All notable EvidenceDiff changes are recorded here.
+All notable PromptDiff changes are recorded here.
+
+## [0.1.1] — 2026-08-16
+
+### Changed
+
+- restored the intended public product identity from EvidenceDiff to PromptDiff;
+- renamed the CLI command from `evidencediff` to `promptdiff`;
+- renamed workspace packages from `@npdplus/evidencediff-*` to `@npdplus/promptdiff-*`;
+- updated public documentation, examples, tests, package metadata, and CLI help text to PromptDiff;
+- bumped product and workspace package versions to `0.1.1`.
+
+### Compatibility
+
+- comparison semantics, deterministic checks, Evidence format, verdict rules, exit codes, privacy posture, and runtime behavior are unchanged from v0.1.0;
+- the v0.1.0 tag remains the historical initial release baseline.
 
 ## [0.1.0] — 2026-08-16
 

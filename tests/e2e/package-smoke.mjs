@@ -12,7 +12,7 @@ const packageRoots = [
   "packages/reporters",
   "apps/cli"
 ];
-const destination = mkdtempSync(join(tmpdir(), "evidencediff-package-smoke-"));
+const destination = mkdtempSync(join(tmpdir(), "promptdiff-package-smoke-"));
 const pnpmCli = process.env.npm_execpath;
 
 function assert(condition, message) {
@@ -84,10 +84,7 @@ try {
   }
 
   const cliManifest = JSON.parse(readFileSync(resolve(root, "apps/cli/package.json"), "utf8"));
-  assert(
-    cliManifest.bin?.evidencediff === "./dist/index.js",
-    "CLI package bin mapping is incorrect"
-  );
+  assert(cliManifest.bin?.promptdiff === "./dist/index.js", "CLI package bin mapping is incorrect");
   const builtCli = readFileSync(resolve(root, "apps/cli/dist/index.js"), "utf8");
   assert(
     builtCli.startsWith("#!/usr/bin/env node\n"),

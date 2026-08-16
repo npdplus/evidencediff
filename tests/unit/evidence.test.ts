@@ -70,7 +70,7 @@ describe("P06 Evidence assembly", () => {
       candidateMetrics: candidate
     });
     const evidence = assembleEvidence({
-      toolVersion: "0.1.0-test",
+      toolVersion: "0.1.1-test",
       test: { id: "evidence-contract", name: "Evidence contract", description: "Synthetic" },
       baseline,
       candidate,
@@ -81,7 +81,7 @@ describe("P06 Evidence assembly", () => {
 
     expect(evidence).toMatchObject({
       formatVersion: 1,
-      toolVersion: "0.1.0-test",
+      toolVersion: "0.1.1-test",
       test: { id: "evidence-contract", name: "Evidence contract", description: "Synthetic" },
       baseline: {
         path: "fixtures/baseline.json",
@@ -139,7 +139,7 @@ describe("P06 Evidence assembly", () => {
     };
 
     const evidence = assembleEvidence({
-      toolVersion: "0.1.0-test",
+      toolVersion: "0.1.1-test",
       baseline,
       candidate,
       differences,
@@ -172,7 +172,7 @@ describe("P06 Evidence assembly", () => {
       ...(reason !== undefined ? { reviewReason: reason } : {})
     };
     const evidence = assembleEvidence({
-      toolVersion: "0.1.0-test",
+      toolVersion: "0.1.1-test",
       baseline,
       candidate,
       differences: [],
@@ -192,7 +192,7 @@ describe("P06 Evidence assembly", () => {
       candidateMetrics: { latencyMs: 200 }
     });
     const evidence = assembleEvidence({
-      toolVersion: "0.1.0-test",
+      toolVersion: "0.1.1-test",
       baseline,
       candidate,
       differences: [],
@@ -209,7 +209,7 @@ describe("P06 Evidence assembly", () => {
   it("generates an opaque UUID and ISO timestamp without embedding input content", () => {
     const summary = aggregateRegressionVerdict([]);
     const evidence = assembleEvidence({
-      toolVersion: "0.1.0-test",
+      toolVersion: "0.1.1-test",
       baseline,
       candidate,
       differences: [],
@@ -230,7 +230,7 @@ describe("P06 Evidence assembly", () => {
       candidateMetrics: candidate
     });
     const input = {
-      toolVersion: "0.1.0-test",
+      toolVersion: "0.1.1-test",
       baseline,
       candidate,
       differences,

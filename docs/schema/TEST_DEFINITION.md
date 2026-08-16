@@ -1,4 +1,4 @@
-# EvidenceDiff V0.1 Test Definition
+# PromptDiff V0.1 Test Definition
 
 **Status:** Frozen Behavioral/Data Contract  
 **Format version:** `1`

@@ -6,17 +6,17 @@ import process from "node:process";
 const root = process.cwd();
 const workspaceRoots = ["apps", "packages"];
 const allowedWorkspaceDependencies = new Map([
-  ["@npdplus/evidencediff-contracts", new Set()],
-  ["@npdplus/evidencediff-core", new Set(["@npdplus/evidencediff-contracts"])],
-  ["@npdplus/evidencediff-checks", new Set(["@npdplus/evidencediff-contracts"])],
-  ["@npdplus/evidencediff-reporters", new Set(["@npdplus/evidencediff-contracts"])],
+  ["@npdplus/promptdiff-contracts", new Set()],
+  ["@npdplus/promptdiff-core", new Set(["@npdplus/promptdiff-contracts"])],
+  ["@npdplus/promptdiff-checks", new Set(["@npdplus/promptdiff-contracts"])],
+  ["@npdplus/promptdiff-reporters", new Set(["@npdplus/promptdiff-contracts"])],
   [
-    "@npdplus/evidencediff-cli",
+    "@npdplus/promptdiff-cli",
     new Set([
-      "@npdplus/evidencediff-contracts",
-      "@npdplus/evidencediff-core",
-      "@npdplus/evidencediff-checks",
-      "@npdplus/evidencediff-reporters"
+      "@npdplus/promptdiff-contracts",
+      "@npdplus/promptdiff-core",
+      "@npdplus/promptdiff-checks",
+      "@npdplus/promptdiff-reporters"
     ])
   ]
 ]);

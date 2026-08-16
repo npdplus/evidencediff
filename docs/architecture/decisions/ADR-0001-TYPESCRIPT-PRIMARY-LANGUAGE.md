@@ -3,7 +3,7 @@
 **Status:** Accepted
 
 ## Context
-EvidenceDiff V0.1 is a developer tool centered on a reusable core, CLI, local files, and possible future browser/Node integrations.
+PromptDiff V0.1 is a developer tool centered on a reusable core, CLI, local files, and possible future browser/Node integrations.
 
 ## Decision
 Use TypeScript as the primary implementation language with Node.js LTS and pnpm workspace tooling.

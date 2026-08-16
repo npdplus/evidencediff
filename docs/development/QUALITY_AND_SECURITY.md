@@ -1,6 +1,6 @@
-# EvidenceDiff V0.1 Quality and Security Controls
+# PromptDiff V0.1 Quality and Security Controls
 
-EvidenceDiff's own verification is deterministic and layered because the tool is intended to provide trustworthy comparison evidence.
+PromptDiff's own verification is deterministic and layered because the tool is intended to provide trustworthy comparison evidence.
 
 ## Permanent Gates
 
@@ -21,7 +21,7 @@ The repository verifies:
 
 Product source is guarded against network-capable Node built-ins, runtime network APIs, provider SDK imports, external runtime package dependencies, and install-time lifecycle scripts in product workspace packages.
 
-Dependency installation and vulnerability audit may use the package registry during development/CI. Built EvidenceDiff workflows remain offline after dependencies/build artifacts are available.
+Dependency installation and vulnerability audit may use the package registry during development/CI. Built PromptDiff workflows remain offline after dependencies/build artifacts are available.
 
 ## Privacy and Filesystem Safety
 

@@ -1,4 +1,4 @@
-# EvidenceDiff V0.1 Check Model
+# PromptDiff V0.1 Check Model
 
 **Status:** Frozen Required Check Catalog
 
@@ -57,7 +57,7 @@ The P04 implementation defines evaluation behavior for these already-frozen conf
 
 Structured targets use JSON Pointer. No implicit trimming, case folding, coercion, or numeric tolerance unless explicitly defined by the check parameters. Malformed regex/ranges/types are configuration errors.
 
-Token/latency checks consume supplied metadata; EvidenceDiff does not call a model or measure provider execution in V0.1. Missing required metadata is an explicit configuration/evaluation availability error according to the implementation contract, never a guessed value.
+Token/latency checks consume supplied metadata; PromptDiff does not call a model or measure provider execution in V0.1. Missing required metadata is an explicit configuration/evaluation availability error according to the implementation contract, never a guessed value.
 
 ## Regression Use
 

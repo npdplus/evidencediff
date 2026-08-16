@@ -1,6 +1,6 @@
-# EvidenceDiff V0.1 Examples
+# PromptDiff V0.1 Examples
 
-These five synthetic scenarios exercise the real local-first EvidenceDiff CLI. They require no provider API keys, cloud login, database, telemetry, or network access after repository dependencies are installed.
+These five synthetic scenarios exercise the real local-first PromptDiff CLI. They require no provider API keys, cloud login, database, telemetry, or network access after repository dependencies are installed.
 
 Build the CLI before running the examples:
 
@@ -43,7 +43,7 @@ Expected exit code: `0`.
 
 ## 4. Token / Latency Budget Regression
 
-The text output is unchanged; only supplied local metadata differs. Baseline is inside both budgets and Candidate exceeds both. EvidenceDiff uses the supplied `tokens` and `latencyMs` values only; it does not estimate tokens or measure provider latency.
+The text output is unchanged; only supplied local metadata differs. Baseline is inside both budgets and Candidate exceeds both. PromptDiff uses the supplied `tokens` and `latencyMs` values only; it does not estimate tokens or measure provider latency.
 
 ```bash
 node apps/cli/dist/index.js test examples/token-latency-budget-regression/test-definition.json --format json

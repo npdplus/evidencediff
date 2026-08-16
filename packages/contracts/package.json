@@ -1,9 +1,9 @@
 {
-  "name": "@npdplus/evidencediff-contracts",
-  "version": "0.1.0",
+  "name": "@npdplus/promptdiff-contracts",
+  "version": "0.1.1",
   "private": true,
   "license": "MIT",
-  "description": "EvidenceDiff V0.1 contracts and validation",
+  "description": "PromptDiff V0.1 contracts and validation",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

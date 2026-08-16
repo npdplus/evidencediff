@@ -1,8 +1,8 @@
-# EvidenceDiff V0.1 Error Model
+# PromptDiff V0.1 Error Model
 
 **Status:** Frozen Behavioral Contract
 
-EvidenceDiff distinguishes product verdicts from failures that prevent a valid evaluation.
+PromptDiff distinguishes product verdicts from failures that prevent a valid evaluation.
 
 ## Product Outcomes
 

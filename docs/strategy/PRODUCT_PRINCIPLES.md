@@ -1,9 +1,9 @@
-# EvidenceDiff Product Principles
+# PromptDiff Product Principles
 
 **Status:** Accepted V0.1 Principles
 
 ## 1. Testing, Comparison, Evidence — Not Chatbot UX
-EvidenceDiff exists to make changes inspectable and verifiable. A chat experience is not the product center.
+PromptDiff exists to make changes inspectable and verifiable. A chat experience is not the product center.
 
 ## 2. Local-First by Default
 Core comparison and validation must work locally without mandatory upload, account, or service dependency.

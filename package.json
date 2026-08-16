@@ -1,6 +1,6 @@
 {
-  "name": "evidencediff",
-  "version": "0.1.0",
+  "name": "promptdiff",
+  "version": "0.1.1",
   "private": true,
   "description": "Local-first AI output comparison, deterministic regression testing, and evidence CLI",
   "license": "MIT",

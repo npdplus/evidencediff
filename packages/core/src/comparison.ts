@@ -4,7 +4,7 @@ import type {
   JsonPointer,
   JsonValue,
   TextDifference
-} from "@npdplus/evidencediff-contracts";
+} from "@npdplus/promptdiff-contracts";
 
 function commonPrefixLength(left: string, right: string): number {
   const limit = Math.min(left.length, right.length);

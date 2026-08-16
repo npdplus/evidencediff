@@ -1,6 +1,6 @@
-# EvidenceDiff Community Code of Conduct
+# PromptDiff Community Code of Conduct
 
-EvidenceDiff is intended to be a professional, welcoming open-source engineering project.
+PromptDiff is intended to be a professional, welcoming open-source engineering project.
 
 Contributors and participants should communicate respectfully and constructively, critique ideas and code rather than people, provide enough technical context for reproducibility, respect privacy/security boundaries, and avoid harassment, discrimination, threats, personal attacks, or deliberately disruptive behavior.
 
@@ -10,4 +10,4 @@ Do not post credentials, private prompts/outputs, customer data, personal data, 
 
 Project maintainers may remove inappropriate content, close interactions, or restrict participation when behavior materially harms contributors, users, or the project.
 
-For conduct concerns that should not be handled publicly, email `npdplus.co.th@gmail.com` with the subject `[EvidenceDiff Conduct]` and include only the information needed for maintainers to review the report.
+For conduct concerns that should not be handled publicly, email `npdplus.co.th@gmail.com` with the subject `[PromptDiff Conduct]` and include only the information needed for maintainers to review the report.

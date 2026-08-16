@@ -6,7 +6,7 @@ import { spawnSync } from "node:child_process";
 
 const root = process.cwd();
 const cli = resolve(root, "apps/cli/dist/index.js");
-const fixtureDirectory = mkdtempSync(join(tmpdir(), "evidencediff-cli-smoke-"));
+const fixtureDirectory = mkdtempSync(join(tmpdir(), "promptdiff-cli-smoke-"));
 
 function execute(args) {
   return spawnSync(process.execPath, [cli, ...args], {
@@ -25,7 +25,7 @@ try {
   const help = execute(["--help"]);
   assert(help.status === 0, `help exit code was ${help.status}`);
   assert(help.stderr === "", `help wrote stderr: ${help.stderr}`);
-  assert(help.stdout.includes("evidencediff compare"), "help did not list compare");
+  assert(help.stdout.includes("promptdiff compare"), "help did not list compare");
 
   writeFileSync(join(fixtureDirectory, "baseline.txt"), "accepted", "utf8");
   writeFileSync(join(fixtureDirectory, "candidate.txt"), "changed", "utf8");
@@ -67,7 +67,7 @@ try {
   const testEvidence = JSON.parse(test.stdout);
   assert(testEvidence.verdict === "PASS", "test did not produce PASS Evidence");
 
-  process.stdout.write("Built EvidenceDiff CLI smoke tests passed.\n");
+  process.stdout.write("Built PromptDiff CLI smoke tests passed.\n");
 } finally {
   rmSync(fixtureDirectory, { recursive: true, force: true });
 }
